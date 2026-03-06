@@ -54,7 +54,7 @@ DOCUMENT À ANALYSER :
         # Si gemini-2.5-flash n'est pas encore dispo sur ton compte, 
         # tu peux redescendre à 'gemini-2.0-flash' ou 'gemini-1.5-flash'.
         response = client.models.generate_content(
-            model='gemini-2.0-flash', 
+            model='gemini-2.5-flash', 
             contents=prompt,
             config=types.GenerateContentConfig(
                 response_mime_type='application/json',
