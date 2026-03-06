@@ -2,31 +2,31 @@
   {
     "name": "GPART",
     "type": "VARCHAR",
-    "max_length": 10,
+    "max_length": "10",
     "mandatory": "OUI",
     "pattern": "^[56][0-9]{9}$",
-    "example": "6000000876"
+    "example": "6000000876, 6000007899"
   },
   {
     "name": "VKONT",
     "type": "VARCHAR",
-    "max_length": 14,
+    "max_length": "14",
     "mandatory": "OUI",
     "pattern": "^004[0-9]{11}$",
-    "example": "004000000786"
+    "example": "004000000786, 004000007930"
   },
   {
     "name": "AIDNR",
     "type": "INTEGER",
-    "max_length": 5,
+    "max_length": "5",
     "mandatory": "OUI",
     "pattern": "^[0-9]{5}$",
-    "example": "10158"
+    "example": "10158 , 28761"
   },
   {
     "name": "AIDTP",
     "type": "VARCHAR",
-    "max_length": 10,
+    "max_length": "10",
     "mandatory": "OUI",
     "pattern": "^0[0-9]{9}$",
     "example": "0104798523"
@@ -34,7 +34,7 @@
   {
     "name": "XDELE",
     "type": "VARCHAR",
-    "max_length": 1,
+    "max_length": "1",
     "mandatory": "NON",
     "pattern": "^X?$",
     "example": "X"
@@ -42,7 +42,7 @@
   {
     "name": "COMNT",
     "type": "VARCHAR",
-    "max_length": 10,
+    "max_length": "10",
     "mandatory": "NON",
     "pattern": "^[a-zA-Z0-9]{10}$",
     "example": "Z45F789017"
@@ -58,39 +58,39 @@
   {
     "name": "AIDDT",
     "type": "INTEGER",
-    "max_length": 8,
+    "max_length": "8",
     "mandatory": "OUI",
     "pattern": "^(19|20)[0-9]{6}$",
-    "example": "20140724"
+    "example": "20140724, 20140701"
   },
   {
     "name": "OPBEL",
     "type": "VARCHAR",
-    "max_length": 14,
+    "max_length": "14",
     "mandatory": "OUI",
     "pattern": "^0[0-9]{13}$",
-    "example": "023600004003"
+    "example": "023600004003, 025000002214"
   },
   {
     "name": "KEYZ1",
     "type": "VARCHAR",
-    "max_length": 14,
+    "max_length": "14",
     "mandatory": "OUI",
     "pattern": "^[a-zA-Z0-9]{14}$",
-    "example": "240714ES0001"
+    "example": "240714ES0001, 170714ES0001"
   },
   {
     "name": "CMPDT",
     "type": "INTEGER",
-    "max_length": 8,
+    "max_length": "8",
     "mandatory": "OUI",
     "pattern": "^(19|20)[0-9]{6}$",
-    "example": "20140724"
+    "example": "20140724, 20140717"
   },
   {
     "name": "BPRSP",
     "type": "VARCHAR",
-    "max_length": 14,
+    "max_length": "14",
     "mandatory": "OUI",
     "pattern": "^MIX_[A-Z0-9]{10}$",
     "example": "MIX_AL04873S"
@@ -98,15 +98,15 @@
   {
     "name": "REGIOGROUP",
     "type": "VARCHAR",
-    "max_length": 3,
+    "max_length": "3",
     "mandatory": "OUI",
     "pattern": "^[0-9]{3}$",
-    "example": "073"
+    "example": "073, 179"
   },
   {
     "name": "USER_CREA",
     "type": "VARCHAR",
-    "max_length": 14,
+    "max_length": "14",
     "mandatory": "OUI",
     "pattern": "^MIX_[A-Z0-9]{10}$",
     "example": "MIX_AL04873S"
@@ -114,25 +114,25 @@
   {
     "name": "DATE_CREA",
     "type": "INTEGER",
-    "max_length": 8,
+    "max_length": "8",
     "mandatory": "OUI",
     "pattern": "^(19|20)[0-9]{6}$",
-    "example": "20140724"
+    "example": "20140724, 20140717"
   },
   {
     "name": "USER_MODIF",
     "type": "VARCHAR",
-    "max_length": 14,
+    "max_length": "14",
     "mandatory": "OUI",
     "pattern": "^MIX_[A-Z0-9]{10}$",
-    "example": "MIX_AL04873S"
+    "example": "MIX_AL04873S, MIX_VB04927S"
   },
   {
     "name": "DATE_MODIF",
     "type": "INTEGER",
-    "max_length": 8,
+    "max_length": "8",
     "mandatory": "OUI",
     "pattern": "^(19|20)[0-9]{6}$",
-    "example": "20140724"
+    "example": "20140724, 20140717"
   }
 ]
