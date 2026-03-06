@@ -1,11 +1,17 @@
 import streamlit as st
 import os
 import shutil
+from dotenv import load_dotenv # Indispensable pour lire le fichier .env
 from core.universal_extractor import extract_text_universally 
 from agents.rap_contract_agent import run_agent
 from core.csv_generator import generate_csv
 from core.packager import create_archive
 
+# --- CHARGEMENT DE LA CONFIGURATION ---
+# Cette ligne lit le fichier .env et charge la variable GOOGLE_API_KEY en mémoire
+load_dotenv() 
+
+# Configuration de la page Streamlit
 st.set_page_config(page_title="Universal Flow Generator", page_icon="⚙️", layout="wide")
 
 st.title("🚀 Universal Flow Generator")
@@ -53,7 +59,8 @@ if uploaded_file:
                 # 2. Analyse par l'Agent
                 st.write("🤖 **Étape 2 :** Analyse sémantique (Gemini)...")
                 struct_json = "build/contract_structured.json"
-                # On s'assure que l'agent produit bien le fichier attendu
+                
+                # L'agent utilise os.getenv("GOOGLE_API_KEY") qui est maintenant chargé par load_dotenv()
                 run_agent(raw_json, None, struct_json)
                 
                 if not os.path.exists(struct_json):
@@ -64,7 +71,7 @@ if uploaded_file:
                 all_csv_paths = []
                 
                 for i in range(nb_files):
-                    # On crée un suffixe propre pour chaque fichier (_1, _2, etc.)
+                    # Création d'un suffixe pour différencier les fichiers si nb_files > 1
                     current_suffix = f"_{i+1}" if nb_files > 1 else ""
                     
                     csv_path = generate_csv(
@@ -73,7 +80,7 @@ if uploaded_file:
                         env=env, 
                         rows=nb_rows, 
                         user_prefix=user_prefix,
-                        suffix=current_suffix # Ce suffixe est maintenant accepté par csv_generator.py
+                        suffix=current_suffix
                     )
                     all_csv_paths.append(csv_path)
                     st.write(f"✔️ Fichier {i+1} généré.")
@@ -98,9 +105,9 @@ if uploaded_file:
 
         except Exception as e:
             st.error(f"❌ Une erreur est survenue : {str(e)}")
-            st.info("Conseil : Vérifiez que votre clé API Gemini est bien configurée dans le fichier .env")
+            st.info("Conseil : Vérifiez que votre clé API Gemini est bien configurée dans le fichier .env à la racine du projet.")
         
         finally:
-            # Nettoyage des fichiers temporaires (mais on garde 'build' pour débogage si besoin)
+            # Nettoyage des fichiers temporaires (on garde 'build' pour archivage)
             if os.path.exists("temp"):
                 shutil.rmtree("temp", ignore_errors=True)
