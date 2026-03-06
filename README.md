@@ -1,4 +1,4 @@
-# 🚀 SAP Data Contract Generator (Gemini AI)
+# 🚀 Génération d'archive de test à l'aide de IA (Gemini AI)
 
 Ce projet est un générateur de données de test intelligent. Il utilise l'IA (Google Gemini) pour analyser des documents Word (contrats d'interface), en extraire les règles métier complexes, et générer des fichiers CSV de test parfaitement formatés.
 
