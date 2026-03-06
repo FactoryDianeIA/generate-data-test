@@ -2,6 +2,12 @@
 
 Ce projet est un générateur de données de test intelligent. Il utilise l'IA (Google Gemini) pour analyser des documents Word (contrats d'interface), en extraire les règles métier complexes, et générer des fichiers CSV de test parfaitement formatés.
 
+## 💻 Environnement de Travail
+
+> **Important** : Ce projet a été conçu pour être exécuté et maintenu via l'IDE **Cursor**. 
+> L'utilisation de Cursor est recommandée pour bénéficier de l'assistance IA sur l'indexation des contrats et la gestion des fichiers `.env`.
+
+
 ## 📋 Fonctionnalités
 - **Analyse IA** : Lecture automatique des documents (Contrats d'interface).
 - **Traduction Regex** : Conversion des descriptions humaines (ex: "Commence par 004") en expressions régulières techniques.
@@ -35,5 +41,5 @@ Le projet est divisé en trois couches logiques qui communiquent de façon séqu
 
 1. Cloner le projet :
    ```bash
-   git clone [https://github.com/ton-pseudo/ton-projet.git](https://github.com/ton-pseudo/ton-projet.git)
-   cd ton-projet
+   git clone [https://github.com/FactoryDianeIA/generate-data-test.git](https://github.com/FactoryDianeIA/generate-data-test.git)
+   cd generate-data-test
