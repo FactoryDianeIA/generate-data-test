@@ -1,0 +1,16 @@
+# Configuration
+.env
+
+# Environnement Python
+.venv/
+__pycache__/
+*.pyc
+
+# Fichiers temporaires et résultats
+build/
+output/
+temp/
+reject/
+
+# Système
+.DS_Store
