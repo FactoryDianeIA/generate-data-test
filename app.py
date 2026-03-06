@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import shutil
-from dotenv import load_dotenv # Indispensable pour lire le fichier .env
+from dotenv import load_dotenv 
 from core.universal_extractor import extract_text_universally 
 from agents.rap_contract_agent import run_agent
 from core.csv_generator import generate_csv
