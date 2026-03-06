@@ -2,13 +2,13 @@ import json
 import os
 from google import genai
 from google.genai import types
-from dotenv import load_dotenv  # <--- AJOUT : Importer dotenv
+from dotenv import load_dotenv
 
-# Charger les variables du fichier .env situé à la racine
+
 load_dotenv() 
 
 def run_agent(raw_json_path, schema_path, output_path):
-    # Initialisation du client (Maintenant os.environ trouvera la clé)
+    
     api_key = os.environ.get("GOOGLE_API_KEY")
     
     if not api_key:
@@ -20,7 +20,7 @@ def run_agent(raw_json_path, schema_path, output_path):
         data = json.load(f)
         text_to_analyze = data.get("text", "")
 
-    # Ton Prompt (Inchangé)
+    # Prompt Universel
     prompt = f"""
 Tu es un expert en flux de données SAP et en Expressions Régulières. Ton rôle est de générer un JSON structuré.
 
@@ -50,9 +50,7 @@ DOCUMENT À ANALYSER :
 """
 
     try:
-        # Note : gemini-2.0-flash est le dernier modèle stable. 
-        # Si gemini-2.5-flash n'est pas encore dispo sur ton compte, 
-        # tu peux redescendre à 'gemini-2.0-flash' ou 'gemini-1.5-flash'.
+        
         response = client.models.generate_content(
             model='gemini-2.5-flash', 
             contents=prompt,
